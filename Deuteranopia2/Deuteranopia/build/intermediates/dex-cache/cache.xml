@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\Deuteranopia2\Deuteranopia\openCVTutorial3CameraControl\build\intermediates\exploded-aar\Deuteranopia\openCVLibrary300\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="c531e0a61ac0301219304e59398d998aa8d09017">
+        <dex dex="D:\Deuteranopia2\Deuteranopia\openCVTutorial3CameraControl\build\intermediates\pre-dexed\debug\classes-875cdd2d7e6d88d3f719af3e55c838aa47dcc139.jar" />
+    </item>
+
+</items>
