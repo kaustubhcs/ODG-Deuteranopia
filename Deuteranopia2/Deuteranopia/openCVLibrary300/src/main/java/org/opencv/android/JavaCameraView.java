@@ -454,10 +454,10 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
 
 
             Mat mZ = Mat.zeros(mG.size(),mG.type());
-/*
-            int ktb_width = mR.width();
-            int ktb_height = mR.height();
 
+            final int ktb_width = mR.width();
+            final int ktb_height = mR.height();
+/*
             String w = String.valueOf(ktb_width);
             String h = String.valueOf(ktb_height);
             Log.d("KTB3" , "Width obtained Integer = " + w);
@@ -467,8 +467,8 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
 
             // TODO Message for Chris: Change the value of below two integers according to the ratio wanted !
 
-            final int x_cood_of_image = 180;
-            final int y_cood_of_image = 135;
+            final int x_cood_of_image = 360;
+            final int y_cood_of_image = 270;
 
 
 
@@ -479,12 +479,12 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
 
 
 
-            final int horizontal_length_of_rect = (1280-x_cood_of_image);
-            final int vertical_breadth_of_rect = (960-y_cood_of_image);
+            final int horizontal_length_of_rect = (ktb_width-x_cood_of_image);
+            final int vertical_breadth_of_rect = (ktb_height-y_cood_of_image);
 
 
             final Rect roi = new Rect(x_cood_of_image, y_cood_of_image, horizontal_length_of_rect, vertical_breadth_of_rect);
-            final Size sz = new Size(1280,960);
+            final Size sz = new Size(ktb_width,ktb_height);
 
 
             mR = new Mat(mR,roi);
