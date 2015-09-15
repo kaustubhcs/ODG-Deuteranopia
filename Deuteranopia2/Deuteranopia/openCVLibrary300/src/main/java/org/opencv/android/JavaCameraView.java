@@ -454,7 +454,7 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
 
 
             Mat mZ = Mat.zeros(mG.size(),mG.type());
-
+/*
             int ktb_width = mR.width();
             int ktb_height = mR.height();
 
@@ -462,7 +462,7 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
             String h = String.valueOf(ktb_height);
             Log.d("KTB3" , "Width obtained Integer = " + w);
             Log.d("KTB3" , "Height obtained Integer = " + h);
-
+*/
 
 
             // TODO Message for Chris: Change the value of below two integers according to the ratio wanted !
