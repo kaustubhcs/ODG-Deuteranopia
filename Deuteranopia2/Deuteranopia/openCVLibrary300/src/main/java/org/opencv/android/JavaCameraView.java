@@ -12,6 +12,7 @@ import android.hardware.Camera.PreviewCallback;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.ViewGroup.LayoutParams;
 import java.util.List;
 import android.widget.Toast;
@@ -47,6 +48,8 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
     protected Camera mCamera;
     protected JavaCameraFrame[] mCameraFrame;
     private SurfaceTexture mSurfaceTexture;
+    //public int x_cood_of_image = 608;
+    //public int y_cood_of_image = 360;
 
     public static class JavaCameraSizeAccessor implements ListItemAccessor {
 
@@ -310,7 +313,37 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
         public Mat gray() {
             Log.i("KTB", "Mat Gray Entered");
             return mYuvFrameData.submat(0, mHeight, 0, mWidth);
+
         }
+
+/*
+        @Override
+        public boolean dispatchKeyEvent(KeyEvent event) {
+            int action = event.getAction();
+            int keyCode = event.getKeyCode();
+            switch (keyCode) {
+                case KeyEvent.KEYCODE_VOLUME_UP:
+                    if (action == KeyEvent.ACTION_DOWN) {
+                        //TODO
+                        x_cood_of_image = x_cood_of_image + 16;
+                        y_cood_of_image = y_cood_of_image + 9;
+                    }
+                    return true;
+                case KeyEvent.KEYCODE_VOLUME_DOWN:
+                    if (action == KeyEvent.ACTION_DOWN) {
+                        //TODO
+                        x_cood_of_image = x_cood_of_image - 16;
+                        y_cood_of_image = y_cood_of_image - 9;
+                    }
+                    return true;
+                default:
+                    return super.dispatchKeyEvent(event);
+            }
+        }
+*/
+
+
+
 
         @Override
         public Mat rgba() {
@@ -455,6 +488,11 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
 
             Mat mZ = Mat.zeros(mG.size(),mG.type());
 
+
+
+
+
+
             final int ktb_width = mR.width();
             final int ktb_height = mR.height();
 /*
@@ -467,8 +505,12 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
 
             // TODO Message for Chris: Change the value of below two integers according to the ratio wanted !
 
-            final int x_cood_of_image = 360;
-            final int y_cood_of_image = 270;
+
+            final int x_cood_of_image = 592;
+            final int y_cood_of_image = 333;
+            final int x_delta = 500;
+            //final int y_delta = 0;
+
 
 
 
@@ -483,7 +525,7 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
             final int vertical_breadth_of_rect = (ktb_height-y_cood_of_image);
 
 
-            final Rect roi = new Rect(x_cood_of_image, y_cood_of_image, horizontal_length_of_rect, vertical_breadth_of_rect);
+            final Rect roi = new Rect(x_cood_of_image + x_delta, y_cood_of_image, horizontal_length_of_rect, vertical_breadth_of_rect);
             final Size sz = new Size(ktb_width,ktb_height);
 
 
